@@ -43,6 +43,7 @@ namespace AULA_17_08
         }
         public Aluno LocalizarAluno(String strBusca)
         {
+            strBusca = strBusca.ToUpper();
             bool isCod = false;
             int cod = -1;
             try
@@ -60,7 +61,7 @@ namespace AULA_17_08
                     return ListaAluno.First(o => o.Matricula == cod);
             }
      
-                return ListaAluno.First(o => o.Nome.Equals(strBusca));          
+            return ListaAluno.First(o => o.Nome.Equals(strBusca));          
         }
         public void CadastrarAlunoViaConsole()
         {
@@ -100,7 +101,7 @@ namespace AULA_17_08
                         Console.WriteLine($"Matricula: { alunoAtual1.Key.Matricula}");
                         Console.WriteLine($"Aluno: { alunoAtual1.Key.Nome}");
                         Console.WriteLine($"Qtd Falta: {alunoAtual1.Value}");
-                        Console.WriteLine($"Nota Final: {alunoAtual1.Key}");
+                        Console.WriteLine($"Nota Final: {MapaDeNotas[alunoAtual1.Key]}");
                         Console.WriteLine($"Situação: { alunoAtual1.Key.Situacao}");
 
                     }
@@ -111,7 +112,7 @@ namespace AULA_17_08
                         Console.WriteLine($"Matricula: { alunoAtual1.Key.Matricula}");
                         Console.WriteLine($"Aluno: { alunoAtual1.Key.Nome}");
                         Console.WriteLine($"Qtd Falta: {alunoAtual1.Value}");
-                        Console.WriteLine($"Nota Final: {alunoAtual1.Key}");
+                        Console.WriteLine($"Nota Final: {MapaDeNotas[alunoAtual1.Key]}");
                         Console.WriteLine($"Situação: { alunoAtual1.Key.Situacao}");
                     }
                 }
@@ -122,7 +123,7 @@ namespace AULA_17_08
                     Console.WriteLine($"Matricula: { alunoAtual1.Key.Matricula}");
                     Console.WriteLine($"Aluno: { alunoAtual1.Key.Nome}");
                     Console.WriteLine($"Qtd Falta: {alunoAtual1.Value}");
-                    Console.WriteLine($"Nota Final: {alunoAtual1.Key}");
+                    Console.WriteLine($"Nota Final: {MapaDeNotas[alunoAtual1.Key]}");
                     Console.WriteLine($"Situação: { alunoAtual1.Key.Situacao}");
                 }
             }
